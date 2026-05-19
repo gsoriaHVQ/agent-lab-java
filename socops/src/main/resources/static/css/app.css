@@ -190,6 +190,16 @@ button:disabled { cursor: default; }
     --pastel-highlight-text: #8b4513;
 }
 
+/* Scavenger Hunt styles */
+.scavenger-list > div { display: flex; align-items: center; justify-content: space-between; }
+.scavenger-list input[type="checkbox"] { width: 1.1rem; height: 1.1rem; }
+.scavenger-progress-track { background-color: #f3f4f6; }
+
+@media (max-width: 640px) {
+    .scavenger-list > div { padding: 0.75rem; }
+}
+
+
 .bg-gradient-to-b {
     background: linear-gradient(to bottom, var(--pastel-blue), var(--pastel-pink));
 }
