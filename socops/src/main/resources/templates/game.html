@@ -12,17 +12,14 @@
         .accent-active:active { background-color: #3b82f6 !important; }
     </style>
 </head>
-<body class="h-full">
+<body class="h-full bg-gradient-to-b from-pastel-blue to-pastel-pink">
 
-<!-- ============================================================= -->
-<!--  LOBBY — visible before a game starts                          -->
-<!-- ============================================================= -->
-<div id="lobbyView" class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
+<!-- Lobby Section -->
+<div id="lobbyView" class="flex flex-col items-center justify-center min-h-full p-6">
+    <div class="text-center max-w-sm bg-white rounded-lg shadow-lg p-6">
         <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
         <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
-
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
+        <div class="bg-pastel-card rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
             <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
             <ul class="text-left text-gray-600 text-sm space-y-2">
                 <li>• Find people who match the questions</li>
@@ -30,62 +27,41 @@
                 <li>• Get 5 in a row to win!</li>
             </ul>
         </div>
-
-        <button onclick="launchGame()"
-                class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg accent-active transition-colors">
+        <button onclick="launchGame()" class="w-full bg-pastel-accent text-white font-semibold py-4 px-8 rounded-lg text-lg hover:bg-pastel-accent-hover transition-colors">
             Start Game
         </button>
     </div>
 </div>
 
-<!-- ============================================================= -->
-<!--  ACTIVE GAME — board, header, optional bingo banner            -->
-<!-- ============================================================= -->
-<div id="activeView" class="flex flex-col min-h-full bg-gray-50" style="display:none">
-
-    <!-- top bar -->
+<!-- Active Game Section -->
+<div id="activeView" class="flex flex-col min-h-full" style="display:none">
     <header class="flex items-center justify-between p-3 bg-white border-b border-gray-200">
-        <button onclick="retreatToLobby()"
-                class="text-gray-500 text-sm px-3 py-1\.5 rounded tile-active">
-            &#8592; Back
+        <button onclick="retreatToLobby()" class="text-gray-500 text-sm px-3 py-1.5 rounded hover:bg-gray-100">
+            ← Back
         </button>
         <h1 class="font-bold text-gray-900">Soc Ops</h1>
         <div class="w-16"></div>
     </header>
-
-    <!-- hint -->
     <p class="text-center text-gray-500 text-sm py-2 px-4">
         Tap a square when you find someone who matches it.
     </p>
-
-    <!-- bingo banner (hidden until victory) -->
-    <div id="bingoBanner"
-         class="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm"
-         style="display:none">
-        &#127881; BINGO! You got a line!
+    <div id="bingoBanner" class="bg-pastel-highlight text-pastel-highlight-text text-center py-2 font-semibold text-sm" style="display:none">
+        🎉 BINGO! You got a line!
     </div>
-
-    <!-- the 5×5 grid -->
     <div class="flex-1 flex items-center justify-center p-3">
-        <div id="gridContainer"
-             class="grid grid-cols-5 gap-1 w-full max-w-md mx-auto aspect-square">
-            <!-- tiles injected by JS -->
+        <div id="gridContainer" class="grid grid-cols-5 gap-1 w-full max-w-md mx-auto aspect-square">
+            <!-- Tiles injected by JS -->
         </div>
     </div>
 </div>
 
-<!-- ============================================================= -->
-<!--  VICTORY MODAL — overlays the board                            -->
-<!-- ============================================================= -->
-<div id="victoryOverlay"
-     class="fixed inset-0 bg-black\/50 flex items-center justify-center p-4 z-50"
-     style="display:none">
-    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div class="text-5xl mb-4">&#127881;</div>
-        <h2 class="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
+<!-- Victory Modal -->
+<div id="victoryOverlay" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50" style="display:none">
+    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl">
+        <div class="text-5xl mb-4">🎉</div>
+        <h2 class="text-3xl font-bold text-pastel-highlight mb-2">BINGO!</h2>
         <p class="text-gray-600 mb-6">You completed a line!</p>
-        <button onclick="dismissVictoryModal()"
-                class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg accent-active transition-colors">
+        <button onclick="dismissVictoryModal()" class="w-full bg-pastel-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-pastel-accent-hover transition-colors">
             Keep Playing
         </button>
     </div>

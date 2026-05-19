@@ -10,8 +10,9 @@ body {
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    -webkit-tap-highlight-color: transparent;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: var(--pastel-blue);
+    color: #333;
 }
 
 /* ── sizing ────────────────────────────────────────────────────── */
@@ -177,4 +178,58 @@ button:disabled { cursor: default; }
 
 .animate-\[bounce_0\.5s_ease-out\] {
     animation: bounce 0.5s ease-out;
+}
+
+:root {
+    --pastel-blue: #d0e8f2;
+    --pastel-pink: #fce4ec;
+    --pastel-card: #ffffff;
+    --pastel-accent: #ffb6c1;
+    --pastel-accent-hover: #ff9aa2;
+    --pastel-highlight: #ffe4b5;
+    --pastel-highlight-text: #8b4513;
+}
+
+.bg-gradient-to-b {
+    background: linear-gradient(to bottom, var(--pastel-blue), var(--pastel-pink));
+}
+
+.bg-pastel-card {
+    background-color: var(--pastel-card);
+}
+
+.bg-pastel-accent {
+    background-color: var(--pastel-accent);
+}
+
+.bg-pastel-accent-hover {
+    background-color: var(--pastel-accent-hover);
+}
+
+.bg-pastel-highlight {
+    background-color: var(--pastel-highlight);
+}
+
+.text-pastel-highlight-text {
+    color: var(--pastel-highlight-text);
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--pastel-accent-hover);
+}
+
+#gridContainer button {
+    border: 1px solid var(--pastel-accent);
+    border-radius: 8px;
+    background-color: var(--pastel-card);
+    color: #555;
+}
+
+#gridContainer button:hover {
+    background-color: var(--pastel-accent);
+    color: #fff;
 }
