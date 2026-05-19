@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "mvn: run",
+			"type": "shell",
+			"command": "cd socops && ./mvnw spring-boot:run",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": {
+					"regexp": "."
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^.*Started.*Application.*",
+					"endsPattern": "^.*Started.*Application.*in.*seconds.*"
+				}
+			},
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "mvn: build",
+			"type": "shell",
+			"command": "cd socops && ./mvnw clean package",
+			"group": "build"
+		},
+		{
+			"label": "mvn: test",
+			"type": "shell",
+			"command": "cd socops && ./mvnw test",
+			"group": "test"
+		}
+	]
+}

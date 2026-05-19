@@ -1,0 +1,20 @@
+{
+  "chat.customAgentInSubagent.enabled": true,
+  "scm.repositories.selectionMode": "single",
+  "chat.promptFilesRecommendations": {
+    "setup": "resourceFilename == 'README.md'"
+  },
+  "chat.tools.terminal.autoApprove": {
+    "./mvnw clean package": true,
+    "./mvnw test": true,
+    "./mvnw spring-boot:run": true
+  },
+  "github.copilot.chat.githubMcpServer.enabled": true,
+  "github.copilot.chat.githubMcpServer.toolsets": [
+    "repos,issues,pull_requests,code_search,copilot,web_search"
+  ],
+  "chat.viewTitle.enabled": true,
+  "chat.viewSessions.enabled": true,
+  "github.copilot.chat.cli.customAgents.enabled": true,
+  "scm.repositories.explorer": true
+}

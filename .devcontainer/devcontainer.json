@@ -1,0 +1,25 @@
+{
+  "name": "Soc-Ops Spring Boot Java",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack"
+      ]
+    },
+    "codespaces": {
+      "openFiles": [
+        "socops/src/main/java/com/socops/web/BingoRestController.java",
+        "README.md"
+      ]
+    }
+  },
+  "postCreateCommand": "cd socops && ./mvnw dependency:resolve",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "Spring Boot Dev Server",
+      "onAutoForward": "openPreview"
+    }
+  }
+}
