@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANEL HOSPITALIZACION</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="panel_hospi.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title">PANEL HOSPITALIZACION</div>
+        <div class="navbar-actions">
+            <span class="nav-link" id="fecha-hora"></span>
+            <button class="icon-button" type="button" onclick="toggleFullScreen()" title="Pantalla completa" aria-label="Pantalla completa">
+                <i class="material-symbols-outlined">screenshot_monitor</i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container-fluid">
+        <h4 id="titulo-panel">HOSPITALIZACION DEMO</h4>
+
+        <div class="toolbar">
+            <div class="field">
+                <label for="sector">Sector:</label>
+                <select name="sector" id="sector" onchange="cargarTabla();">
+                    <option value="demo" selected>HOSPITALIZACION DEMO</option>
+                    <option value="40">HOSPITALIZACION (TERCER PISO ATRAS)</option>
+                </select>
+            </div>
+
+            <button class="fullscreen-button" type="button" onclick="toggleFullScreen()">
+                <i class="material-symbols-outlined">screenshot_monitor</i>
+                <span>PANTALLA COMPLETA</span>
+            </button>
+        </div>
+
+        <table id="tabla-unidad" class="display nowrap" style="width:100%">
+            <thead>
+            <tr>
+                <th>FECHA IN.</th>
+                <th>ATE.</th>
+                <th>HAB.</th>
+                <th>HCL</th>
+                <th>EXI</th>
+                <th>EXL</th>
+                <th>CARD.</th>
+                <th>FISIO.</th>
+                <th>INTER.</th>
+                <th>CIR.</th>
+                <th>PREALTA</th>
+                <th>ENFER.</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <table class="legend">
+            <tr>
+                <td class="amarillo"></td>
+                <td>&nbsp;&nbsp;INGRESO&nbsp;</td>
+                <td class="rojo"></td>
+                <td>&nbsp;&nbsp;ALTA MEDICA&nbsp;</td>
+            </tr>
+        </table>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="panel_hospi.js"></script>
+</body>
+</html>

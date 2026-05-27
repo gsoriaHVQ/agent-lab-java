@@ -1,0 +1,174 @@
+:root {
+    --hvq: #7F0C43;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    color: #1f2933;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    align-items: center;
+    background-color: var(--hvq);
+    color: white;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-title,
+.nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-actions {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-button {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.container-fluid {
+    padding: 1rem;
+}
+
+#titulo-panel {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.toolbar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.field {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+}
+
+select,
+button {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    min-height: 38px;
+    padding: 0.45rem 0.65rem;
+}
+
+.fullscreen-button {
+    align-items: center;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 0.35rem;
+}
+
+table.dataTable thead th {
+    background-color: var(--hvq);
+    color: white;
+    font-size: 1rem !important;
+    text-align: center;
+}
+
+table.dataTable tbody td {
+    font-size: 1rem !important;
+    text-align: center;
+}
+
+table.dataTable tbody td.fila-alta {
+    background-color: #F15868;
+}
+
+table.dataTable tbody td.fila-pintar {
+    background-color: #E3ED6C;
+}
+
+table.dataTable tbody td.fila-normal {
+    background-color: white;
+}
+
+table.dataTable tbody td.confirma {
+    background-color: green;
+}
+
+table.dataTable tbody td.no_confirma {
+    background-color: red;
+}
+
+.icono-tabla {
+    font-size: 1.2rem !important;
+}
+
+.legend {
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.legend td {
+    padding: 0.25rem;
+}
+
+.rojo {
+    background-color: #F15868;
+    width: 25px;
+}
+
+.amarillo {
+    background-color: #E3ED6C;
+    width: 25px;
+}
+
+@media (min-width: 1920px) {
+    table.dataTable thead th {
+        font-size: 2.5rem !important;
+    }
+
+    table.dataTable tbody td {
+        font-size: 2.5rem !important;
+    }
+
+    .icono-tabla {
+        font-size: 2.8rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar,
+    .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .field,
+    select,
+    .fullscreen-button {
+        width: 100%;
+    }
+}
