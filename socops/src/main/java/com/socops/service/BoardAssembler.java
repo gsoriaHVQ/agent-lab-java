@@ -49,6 +49,18 @@ public final class BoardAssembler {
         return freshBoard;
     }
 
+    /** Produce a fresh 24-item scavenger list without the centre free cell. */
+    public static List<BingoCell> assembleScavengerList() {
+        var shuffledPrompts = new ArrayList<>(IcebreakerPrompts.ALL_PROMPTS);
+        Collections.shuffle(shuffledPrompts);
+
+        List<BingoCell> scavengerList = new ArrayList<>(24);
+        for (int slot = 0; slot < 24; slot++) {
+            scavengerList.add(BingoCell.ofPrompt(slot, shuffledPrompts.get(slot)));
+        }
+        return scavengerList;
+    }
+
     /* ------------------------------------------------------------------ */
     /*  Cell toggling                                                      */
     /* ------------------------------------------------------------------ */
